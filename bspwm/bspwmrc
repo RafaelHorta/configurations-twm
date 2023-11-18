@@ -2,12 +2,10 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x picom > /dev/null || picom -f --daemon --config $HOME/.config/picom/picom.conf &
-pgrep -x feh   > /dev/null || feh --bg-fill $HOME/Imágenes/wallpaper00.jpg &
+pgrep -x feh > /dev/null || feh --bg-fill $HOME/.backgrounds/bocchi03.png &
+$HOME/.config/polybar/launch.sh &
 
-sleep 1
-$HOME/.config/polybar/launch.sh
-
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 1 2 3 4 5
 
 bspc config border_width         0
 bspc config window_gap           5
@@ -16,6 +14,5 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Alacritty desktop='^1' follow=on
-bspc rule -a Firefox-esr desktop='^2' follow=on
+bspc rule -a Brave-browser desktop='^2' follow=on
 bspc rule -a Code desktop='^3' follow=on
